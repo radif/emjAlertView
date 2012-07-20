@@ -1,4 +1,5 @@
 Imagine popping an alert in one method call without the hassle to make a variable or implementing the delegate!
+Even for the alertViews with textFileds in them!
 
 [emjAlertView showAlertWithTitle:@"Enter your name"
                                 message:@"(or nickname)"
