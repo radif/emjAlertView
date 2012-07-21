@@ -22,12 +22,14 @@
 +(void)showAlertWithTitle:(NSString *)title message:(NSString *)message configuration:(void (^)(emjAlertView * alertView))configuration completion:(void (^)(emjAlertView * alertView, NSInteger buttonIndex))completion cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
     
     emjAlertView *alert=[[emjAlertView alloc] initWithTitle:title message:message completion:completion cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
-    configuration(alert);
+    if(configuration)
+        configuration(alert);
     [alert show];
     
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    self.completion(self, buttonIndex);
+    if (self.completion)
+        self.completion(self, buttonIndex);
 }
 @end
