@@ -1,19 +1,19 @@
 Imagine popping an alert in one method call without the hassle to make a variable or implementing the delegate!
 Even for the alertViews with textFileds in them!
 
-[emjAlertView showAlertWithTitle:@"Enter your name"
-                                message:@"(or nickname)"
-                          configuration:^(emjAlertView *alertView) {
-
-                              alertView.alertViewStyle=UIAlertViewStylePlainTextInput;
-
-                          } completion:^(emjAlertView*alertView, NSInteger buttonIndex) {
-
-                              if (buttonIndex==1) {
-                                  //user pressed "OK"
-                                  NSString *name=[alertView textFieldAtIndex:0].text;
-								}
-
-                          }
-                      cancelButtonTitle:@"Cancel"
-                      otherButtonTitles:@"OK", nil];
+     [emjAlertView showAlertWithTitle:@"Enter your name"
+                                     message:@"(or nickname)"
+                               configuration:^(emjAlertView *alertView) {
+     
+                                   alertView.alertViewStyle=UIAlertViewStylePlainTextInput;
+     
+                               } completion:^(emjAlertView*alertView, NSInteger buttonIndex) {
+     
+                                   if (buttonIndex==1) {
+                                       //user pressed "OK"
+                                       NSString *name=[alertView textFieldAtIndex:0].text;
+     								}
+     
+                               }
+                           cancelButtonTitle:@"Cancel"
+                           otherButtonTitles:@"OK", nil];
